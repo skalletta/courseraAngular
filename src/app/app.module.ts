@@ -3,7 +3,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
-import {MdToolbarModule,MatButtonModule,MatCardModule, MatGridListModule, MatListModule} from '@angular/material';
+import {MatDialogModule,MatCheckboxModule, MatToolbarModule,MatButtonModule,MatCardModule, MatGridListModule, MatListModule,MatInputModule} from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AppRoutingModule} from './app-routing/app-routing.module';
 
@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import {DishService} from './services/dish.service';
 import {PromotionService} from './services/promotion.service';
 import {LeaderService} from './services/leader.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -31,24 +32,31 @@ import {LeaderService} from './services/leader.service';
     FooterComponent,
     HomeComponent,
     AboutComponent,
-    ContactComponent
+    ContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
-    MdToolbarModule,
+    MatToolbarModule,
     MatListModule,
     MatCardModule,
     FlexLayoutModule,
     MatGridListModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatDialogModule,
+    MatCheckboxModule,
+    MatInputModule
   ],
   providers: [DishService,
-  PromotionService,
-LeaderService],
+    PromotionService,
+    LeaderService],
+  entryComponents: [
+    LoginComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
